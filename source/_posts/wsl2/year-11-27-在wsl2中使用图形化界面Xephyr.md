@@ -42,16 +42,11 @@ sudo apt install xserver-xephyr
 
 # 启动桌面环境
 ## 1.启动X server
-```bash 
-# Xephyr的指令，視窗可縮放
-Xephyr -br -ac -noreset -resizeable -screen 1600x900 :1 &
-```
-
 > 出现` Xephyr cannot open host display`问题,参考[链接](https://github.com/dnschneid/crouton/issues/18)
 
 ```bash
 export DISPLAY=:0 XAUTHORITY=/etc/X11/host-Xauthority
-Xephyr :1  -screen 2100x1500 # 设置自己需要的分辨率
+Xephyr :1  -screen 2100x1500 -br -ac -noreset -resizeable & # 设置自己需要的分辨率
 # 会跳出一个黑框框
 ```
 
