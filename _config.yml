@@ -3,13 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Clint
 subtitle: ''
 description: ''
 keywords:
-author: John Doe
+author: Clint Luo
 language: zh-CN  # 指定语言，会影响主题显示的语言，按需修改
-timezone: ''
+timezone: 'Asia/Chongqing'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -30,7 +30,7 @@ sitemap:
 # 百度站点
 baidusitemap: 
   path: baidusitemap.xml
-  
+
 # Directory
 source_dir: source
 public_dir: public
