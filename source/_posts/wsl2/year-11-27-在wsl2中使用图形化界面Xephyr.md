@@ -50,8 +50,8 @@ Xephyr -br -ac -noreset -resizeable -screen 1600x900 :1 &
 > 出现` Xephyr cannot open host display`问题,参考[链接](https://github.com/dnschneid/crouton/issues/18)
 
 ```bash
-export DISPLAY=:1 XAUTHORITY=/etc/X11/host-Xauthority
-Xephyr :1 # 会跳出一个黑框框
+export DISPLAY=:0 XAUTHORITY=/etc/X11/host-Xauthority
+Xephyr :1  # 会跳出一个黑框框
 ```
 以后每次启动，都需要成功运行一次上面的操作，才能自定义分辨率，我也不知道为啥，测试了好多次，才找到规律。
 
