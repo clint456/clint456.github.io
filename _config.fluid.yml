@@ -36,8 +36,7 @@ force_https: false
 # sitemap
 sitemap:
   path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
+
 
 # 代码块的增强配置
 # Enhancements to code blocks
