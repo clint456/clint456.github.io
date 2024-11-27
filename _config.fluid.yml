@@ -18,11 +18,11 @@
 
 # 用于浏览器标签的图标
 # Icon for browser tab
-favicon: /img/fluid.png
+favicon: /images/icon300_300.png
 
 # 用于苹果设备的图标
 # Icon for Apple touch
-apple_touch_icon: /img/fluid.png
+apple_touch_icon: /images/icon300_300.png
 
 # 浏览器标签页中的标题分隔符，效果：文章名 - 站点名
 # Title separator in browser tab, eg: article - site
@@ -32,10 +32,6 @@ tab_title_separator: " - "
 # Force all links to be HTTPS (applicable to HTTP mixed error)
 force_https: false
 
-# 自动生成sitemap
-# sitemap
-sitemap:
-  path: sitemap.xml
 
 
 # 代码块的增强配置
