@@ -45,13 +45,14 @@ sudo apt install xserver-xephyr
 > 出现` Xephyr cannot open host display`问题,参考[链接](https://github.com/dnschneid/crouton/issues/18)
 
 ```bash
-export DISPLAY=:0 XAUTHORITY=/etc/X11/host-Xauthority
-Xephyr :1  -screen 2100x1500 -br -ac -noreset -resizeable & # 设置自己需要的分辨率
+export DISPLAY=:0 XAUTHORITY=/etc/X11/host-Xauthority #开启0号窗口
+Xephyr :1  -screen 2100x1500 -br -ac -noreset -resizeable & # x开启在1号窗口，设置自己需要的分辨率
 # 会跳出一个黑框框
 ```
 
 ## 2.开启桌面
 ```bash
+export DISPLAY=:1 # 将桌面投射到1号窗口
 dbus-launch --exit-with-session startplasma-x11
 ```
 接下来就可以看到成功的界面了
