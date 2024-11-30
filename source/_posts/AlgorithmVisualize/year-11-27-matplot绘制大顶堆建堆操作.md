@@ -1,9 +1,9 @@
 ---
 title: matplot绘制大顶堆建堆操作
 date: 2024-11-27 21:24:52
-tags: [python,matplot]
+tags: [python,matplotlib]
 author: clinton
-categories: AlgorithmVisualize
+categories: Algorithm
 ---
 
 # 步骤 1：安装系统依赖
