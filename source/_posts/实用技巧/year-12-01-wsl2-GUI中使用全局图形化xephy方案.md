@@ -1,9 +1,8 @@
 ---
-title: 在wsl2中使用图形化界面Xephyr
-date: 2024-11-27 16:21:38
-tags: Xephyr,图形化
-categories: wsl2
-author: clint
+title: wsl2-GUI中使用全局图形化xephy方案
+date: 2024-12-01 00:55:29
+tags: wsl2,xephy
+categories: [实用技巧]
 ---
 
 想法很简单，不想装双系统，玩崩溃了window里也可能受到影响，但是有时候的测试环境又必须在linux下，比如windows的clang、mingw、msys2就没有原生的gcc编译器好用，如果需要用matlablib画图的话，wsl2又不能完全支持，所以就有了在window是中操作图形化wsl ubuntu的想法，方案来自于互联网检索，并非原创。
@@ -57,7 +56,7 @@ dbus-launch --exit-with-session startplasma-x11
 ```
 接下来就可以看到成功的界面了
 
-![](images/Xephyr.png)
+![](https://raw.githubusercontent.com/clint456/PicGo/main/实用技巧/wslg-xephy.png)
 # 恢复普通的wslg界面x
 删除`~/.profile`中添加的内容，重启即可
 

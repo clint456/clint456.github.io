@@ -2,8 +2,7 @@
 title: matplot绘制大顶堆建堆操作
 date: 2024-11-27 21:24:52
 tags: [python,matplotlib]
-author: clinton
-categories: Algorithm
+categories: 数据结构
 ---
 
 # 步骤 1：安装系统依赖
@@ -135,10 +134,10 @@ plt.show()
 
 ## 执行结果
 
-![](images/heapSort/node_1.png)
-![](/images/heapSort/node_2.png)
-![](/images/heapSort/node_3.png)
-![](/images/heapSort/node_4.png)
+![](https://raw.githubusercontent.com/clint456/PicGo/main/%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%A4%A7%E9%A1%B6%E5%A0%86%E5%BB%BA%E5%A0%8601.png)
+![](https://raw.githubusercontent.com/clint456/PicGo/main/%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%A4%A7%E9%A1%B6%E5%A0%86%E5%BB%BA%E5%A0%8603.png)
+![](https://raw.githubusercontent.com/clint456/PicGo/main/算法可视化/Heap%20after%20adjusting%20node%201.png)
+![](https://raw.githubusercontent.com/clint456/PicGo/main/%E7%AE%97%E6%B3%95%E5%8F%AF%E8%A7%86%E5%8C%96/%E5%A4%A7%E9%A1%B6%E5%A0%86%E5%BB%BA%E5%A0%8604.png)
 
 
 对于数组 `[48, 62, 35, 77, 55, 14, 35, 98]`，我们将按照 **大顶堆** 的规则从最后一个非叶子节点向上逐步进行堆化操作。以下是构建大顶堆的详细步骤：

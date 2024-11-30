@@ -1,8 +1,8 @@
 ---
 title: 将html网站抓取为md文件
 date: 2024-11-30 19:42:33
-tags: [实用技巧]
-categories: Tools
+tags: html2md
+categories: [实用技巧]
 ---
 
 # [clean-mark工具](https://github.com/croqaz/clean-mark?tab=readme-ov-file#-clean-mark)
@@ -10,7 +10,7 @@ categories: Tools
 ```cmd
 npm install clean-mark --global
 ```
-![](/img/cleanMark.png)
+![cleanMark](https://raw.githubusercontent.com/clint456/PicGo/main/实用技巧/cleanMark.png)
 
 以下是您提供的命令行用法的中文解释：
 
