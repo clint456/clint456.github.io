@@ -1,7 +1,7 @@
 ---
 title: Cmake官文文档[翻译]
 date: 2024-12-02 16:56:46
-tags: Cmake(3.28)官方文档
+tags: Cmake
 categories: CPP
 ---
 以下是一个全面的 CMake 入门教程，涵盖了从基本概念到进阶功能的各个方面。教程以 Markdown 格式呈现，适合用作快速学习和参考：

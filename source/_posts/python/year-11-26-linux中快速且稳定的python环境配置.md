@@ -1,7 +1,7 @@
 ---
 title: linux中快速且稳定的python环境配置
 date: 2024-11-26 00:52:58
-tags: 环境配置
+tags: Python环境配置
 categories: Python
 ---
 # `pyenv+poetry`快速实现稳定的测试环境
