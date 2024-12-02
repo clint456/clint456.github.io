@@ -2,7 +2,7 @@
 title: VsCode+Cmake使用全流程
 date: 2024-12-02 16:36:47
 tags: Cmake使用流程
-categories: C语言
+categories: CPP
 ---
 
 
