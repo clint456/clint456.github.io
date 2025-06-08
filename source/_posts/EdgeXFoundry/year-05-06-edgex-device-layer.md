@@ -18,13 +18,13 @@ tags: device-layer
 
 ## Overview
 
-[设备服务层官方文档](https://docs.edgexfoundry.org/3.1/microservices/device/DeviceService/)
+[设备服务层官方文档](https://docs.edgexfoundry.org/4.0/microservices/device/DeviceService/)
 
 设备服务层与设备服务进行交互。
 
 设备服务是与设备交互的边缘连接器，这些设备包括但不限于：家用电器、报警系统、暖通空调设备、照明、任何行业的机器、灌溉系统、无人机、交通信号、自动化交通工具等等。
 
-EdgeX 设备服务通过数百种协议和数千种格式，将来自设备的信息翻译并引入 EdgeX。换句话说，设备服务摄取由“物”提供的传感器数据。在摄取传感器数据时，设备服务将“物”产生和通信的数据转换为 EdgeX Foundry 的通用数据结构，并将转换后的数据发送到核心服务层，以及 EdgeX Foundry 其他层的其他微服务。
+EdgeX 设备服务通过数百种协议和数千种格式，将来自设备的信息翻译并引入 EdgeX。换句话说，设备服务摄取由"物"提供的传感器数据。在摄取传感器数据时，设备服务将"物"产生和通信的数据转换为 EdgeX Foundry 的通用数据结构，并将转换后的数据发送到核心服务层，以及 EdgeX Foundry 其他层的其他微服务。
 
 设备服务还接收并处理返回给设备的任何操作请求。设备服务从 EdgeX 接收一个通用命令来执行某种操作，并将其翻译成特定协议的请求，然后将该请求转发给目标设备。
 
@@ -53,7 +53,7 @@ EdgeX 设备服务通过数百种协议和数千种格式，将来自设备的�
 
 ![image-20250320135541471](https://raw.githubusercontent.com/clint456/PicGo/main/edgex/image-20250320135541471.png)
 
-设备服务提供了 EdgeX 其余部分与物理设备之间的抽象。换句话说，设备服务“封装”了协议通信代码、设备驱动程序/固件和实际设备。
+设备服务提供了 EdgeX 其余部分与物理设备之间的抽象。换句话说，设备服务"封装"了协议通信代码、设备驱动程序/固件和实际设备。
 
 EdgeX 中的每个设备服务都是一个独立的微服务。设备服务通常使用设备服务 SDK 创建。SDK 实际上是一个库，提供所有设备服务所需的通用脚手架代码和便利方法。虽然不是必须的，但 EdgeX 社区使用 SDK 作为社区提供的所有设备服务的基础。SDK 使创建设备服务变得更简单，允许开发者专注于设备特定的通信、功能等，而不是编写大量 EdgeX 服务模板代码。使用 SDK 还有助于确保设备服务遵循设备服务所需的规则。
 
@@ -80,7 +80,7 @@ EdgeX 中的每个设备服务都是一个独立的微服务。设备服务通�
 
 >  [!Note] 
 >
->  EdgeX 3.0
+>  EdgeX 4.0
 >
 >  在成功执行 PUT 命令后，只要资源不是只写，设备服务还将更新后的资源值的事件发布到 EdgeX 消息总线。
 
@@ -116,7 +116,7 @@ EdgeX 中的每个设备服务都是一个独立的微服务。设备服务通�
    将自身注册为运行中的 EdgeX 微服务（运行时），从而允许其他 EdgeX 服务与其通信。
 
 4. **加载和管理物理设备**  
-   加载并管理它知道如何通信的物理设备，这一过程称为设备的“配置”（provisioning）。在某些情况下，设备服务可能具备自动检测和配置设备的能力。例如，一个 Onvif 设备服务可能在其范围内自动执行摄像头发现，然后将该设备配置到 EdgeX 和相关的 Onvif 设备服务中。
+   加载并管理它知道如何通信的物理设备，这一过程称为设备的"配置"（provisioning）。在某些情况下，设备服务可能具备自动检测和配置设备的能力。例如，一个 Onvif 设备服务可能在其范围内自动执行摄像头发现，然后将该设备配置到 EdgeX 和相关的 Onvif 设备服务中。
 
 5. **更新并通知 EdgeX 设备运行状态**  
    更新并告知 EdgeX 它所管理设备的运行状态（例如，设备是否仍在运行并能够通信）。
@@ -134,7 +134,7 @@ EdgeX 中的每个设备服务都是一个独立的微服务。设备服务通�
 
 ## 设备服务功能需求
 
-[Requirements for the device service](https://docs.edgexfoundry.org/3.1/design/legacy-requirements/device-service/)设备服务的需求在本文档中提供。这些需求用于定义通过任何设备服务 SDK 提供哪些功能，以生成设备服务的脚手架代码。它们还可以帮助读者进一步理解设备服务的职责和角色。
+[Requirements for the device service](https://docs.edgexfoundry.org/4.0/design/legacy-requirements/device-service/)设备服务的需求在本文档中提供。这些需求用于定义通过任何设备服务 SDK 提供哪些功能，以生成设备服务的脚手架代码。它们还可以帮助读者进一步理解设备服务的职责和角色。
 
 ---
 
@@ -322,16 +322,16 @@ Coming Soon.
 
 > [!Note] 
 >
-> EdgeX 3.0
+> EdgeX 4.0
 >
-> - `UpdateLastConnected` 在 EdgeX 3.0 中已移除。
-> - 在 EdgeX 3.0 中，`MessageQueue` 配置已移至《通用配置》中的 `MessageBus`。
+> - `UpdateLastConnected` 在 EdgeX 4.0 中已移除。
+> - 在 EdgeX 4.0 中，`MessageQueue` 配置已移至《通用配置》中的 `MessageBus`。
 
 > [!Note]
 >
-> EdgeX 3.1
+> EdgeX 4.0
 >
-> - EdgeX 3.1 新增了对文件 URI 的支持，允许通过 URI 从远程位置获取私有配置文件，而非本地文件系统。详情见《配置文件命令行》部分。
+> - EdgeX 4.0 新增了对文件 URI 的支持，允许通过 URI 从远程位置获取私有配置文件，而非本地文件系统。详情见《配置文件命令行》部分。
 
 > [!Note]
 >
@@ -381,7 +381,7 @@ Coming Soon.
 | **DataTransform**        | true             | 控制是否对数值读数应用转换                                   |
 | **MaxCmdOps**            | 128              | 设备命令中的最大资源数（即事件中的读数）                     |
 | **MaxCmdResultLen**      | 256              | 命令结果的最大 JSON 字符串长度                               |
-| **ProfilesDir**          | './res/profiles' | 如果设置，则为包含要上传至核心元数据的配置文件目录或索引 URI。详情见《设备服务文件的 URI》[URI for Device Service Files](https://docs.edgexfoundry.org/3.1/microservices/device/Configuration/#uris-for-device-service-files) |
+| **ProfilesDir**          | './res/profiles' | 如果设置，则为包含要上传至核心元数据的配置文件目录或索引 URI。详情见《设备服务文件的 URI》[URI for Device Service Files](https://docs.edgexfoundry.org/4.0/microservices/device/Configuration/#uris-for-device-service-files) |
 | **DevicesDir**           | './res/devices'  | 如果设置，则为包含要上传至核心元数据的设备定义文件目录或索引 URI。详情见《设备服务文件的 URI》 |
 | **ProvisionWatchersDir** | ''               | 如果设置，则为包含要上传至核心元数据的预配置观察者定义文件目录或索引 URI（特定服务时需要）。详情见《设备服务文件的 URI》 |
 | **EnableAsyncReadings**  | true             | 启用/禁用设备服务处理异步读数的能力                          |
@@ -399,11 +399,11 @@ Coming Soon.
 
 ---
 
-## 设备服务文件的 URI（EdgeX 3.1）
+## 设备服务文件的 URI（EdgeX 4.0）
 
 > [!Note]
 >
-> EdgeX 3.1 新增了对设备定义、设备配置文件和预配置观察者的 URI 支持。
+> EdgeX 4.0 支持通过 URI 加载设备定义、设备配置文件和预配置观察者。
 
 从 URI 加载设备定义、设备配置文件和预配置观察者时，目录字段（例如 `DevicesDir`、`ProfilesDir`、`ProvisionWatchersDir`）加载的是索引文件而非文件夹名称。索引文件内容指定要通过 URI 加载的单个文件，方法是将文件名附加到 URI 上，如下例所示。原始 URI 中指定的任何认证将用于后续 URI。详情见《文件 URI》部分。
 
@@ -465,26 +465,26 @@ ProvisionWatchersDir = "./res/provisionwatchers"
 
 2. **自定义结构化配置**  
 
-   For Go Device Services see [Go Custom Structured Configuration](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/CustomConfiguration/#go-device-service-sdk---custom-structured-configuration) for more details.（文章后有）
+   For Go Device Services see [Go Custom Structured Configuration](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/CustomConfiguration/#go-device-service-sdk---custom-structured-configuration) for more details.（文章后有）
 
-   For C Device Service see [C Custom Structured Configuration](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/CustomConfiguration/#c-device-service-sdk---custom-structured-configuration) for more details.
+   For C Device Service see [C Custom Structured Configuration](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/CustomConfiguration/#c-device-service-sdk---custom-structured-configuration) for more details.
 
 
 ---
 
 ## 密钥（Secrets）
 
-### 配置（EdgeX 3.0）
+### 配置（EdgeX 4.0）
 
-- 在 EdgeX 3.0 中，`SecretStore` 配置已从每个服务的配置文件中移除。它具有默认值，**可通过环境变量覆盖**。详情见《SecretStore 覆盖》 [2配置服务的密钥存储](https://www.yuque.com/clint-ldylx/hm0szg/rdledfg59qblhxf2#sxjNi)部分。
-- 在安全模式下运行的所有设备服务实例都需要由安全服务为其创建 `SecretStore`。详情见[Configuring Add-on Service（配置附加服务）](https://www.yuque.com/clint-ldylx/hm0szg/rdledfg59qblhxf2#C8tWd)以了解如何为设备服务配置 `SecretStore`。随着 Redis Pub/Sub 成为默认 EdgeX 消息总线，所有设备服务都需要在其 `SecretStore` 中添加 `redisdb` 已知秘密，以便连接到安全的 EdgeX 消息总线。详情见《安全消息总线文档》。
+- 在 EdgeX 4.0 中，`SecretStore` 配置已从每个服务的配置文件中移除。它具有默认值，**可通过环境变量覆盖**。详情见《SecretStore 覆盖》部分。
+- 在安全模式下运行的所有设备服务实例都需要由安全服务为其创建 `SecretStore`。详情见[Configuring Add-on Service（配置附加服务）](https://docs.edgexfoundry.org/4.0/security/Ch-Configuring-Add-On-Services/)以了解如何为设备服务配置 `SecretStore`。随着 Redis Pub/Sub 成为默认 EdgeX 消息总线，所有设备服务都需要在其 `SecretStore` 中添加 `redisdb` 已知秘密，以便连接到安全的 EdgeX 消息总线。详情见《安全消息总线文档》。
 
-每个设备服务还具有详细配置，以启用与其专用 `SecretStore`  的 **RESTful API** 连接，详细参考[《Secret API Reference》](https://docs.edgexfoundry.org/3.1/api/devices/Ch-APIDeviceSDK/#swagger)。
+每个设备服务还具有详细配置，以启用与其专用 `SecretStore`  的 **RESTful API** 连接，详细参考[《Secret API Reference》](https://docs.edgexfoundry.org/4.0/api/devices/Ch-APIDeviceSDK/#swagger)。
 
 ### 储密钥
 
 - **安全模式**  
-  在安全模式下运行设备服务时，可通过向设备服务的 `/api/v3/secret` API 路由发送 HTTP POST 请求将秘密存储到 `SecretStore` 中。POST 的秘密数据存储到服务的 `secureSecretStore` 中。一旦秘密存储，只有添加该秘密的服务能够检索它。详情和示例见《[Secret API Reference](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/Secrets/)》。
+  在安全模式下运行设备服务时，可通过向设备服务的 `/api/v3/secret` API 路由发送 HTTP POST 请求将秘密存储到 `SecretStore` 中。POST 的秘密数据存储到服务的 `secureSecretStore` 中。一旦秘密存储，只有添加该秘密的服务能够检索它。详情和示例见《[Secret API Reference](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/Secrets/)》。
 
 - **非安全模式**  
   在非安全模式下，秘密存储并从服务的 `configuration.yaml` 文件的 `Writable.InsecureSecrets` 部分检索。非安全秘密及其路径可按以下方式配置：  
@@ -510,19 +510,19 @@ ProvisionWatchersDir = "./res/provisionwatchers"
 
 Go设备提供`SecretProvider.GetSecret()`API来检索设备服务密钥，详见[Device MQTT Service](https://github.com/edgexfoundry/device-mqtt-go/blob/v3.1/internal/driver/config.go#L118)使用该方法提供的例子。
 
-请注意，该代码实现了一个重试循环，允许一定时间的等待密钥由`/secret `端点推送给`SecretStore`，更多详细参考[Storing Secrets](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/Secrets/#storing-secrets)。
+请注意，该代码实现了一个重试循环，允许一定时间的等待密钥由`/secret `端点推送给`SecretStore`，更多详细参考[Storing Secrets](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/Secrets/#storing-secrets)。
 
 ---
 
 ## 总结
 
-设备服务的配置涵盖了通用配置（如日志级别、遥测）和特定配置（如设备通信、发现、文件 URI）。EdgeX 3.0 和 3.1 引入了变更，如移除 `UpdateLastConnected`、迁移 `MessageQueue` 至 `MessageBus`，以及新增 URI 支持以从远程加载配置文件和设备定义。这些增强了配置的灵活性。
+设备服务的配置涵盖了通用配置（如日志级别、遥测）和特定配置（如设备通信、发现、文件 URI）。EdgeX 4.0 和 4.0 引入了变更，如移除 `UpdateLastConnected`、迁移 `MessageQueue` 至 `MessageBus`，以及新增 URI 支持以从远程加载配置文件和设备定义。这些增强了配置的灵活性。
 
 主要配置项包括：
 
 - **Writable**：动态调整日志级别、读数单位和遥测指标。
 - **Device**：控制数据转换、命令限制、异步读数及设备发现。
-- **URI 支持（3.1）**：通过 URI 加载设备、配置文件和观察者，简化远程管理。
+- **URI 支持（4.0）**：通过 URI 加载设备、配置文件和观察者，简化远程管理。
 - **Secrets**：支持安全和非安全模式下的秘密存储与检索，适配不同安全需求。
 
 自定义配置通过 `Driver` 或结构化方式实现，满足特定设备需求。总体而言，设备服务配置设计兼顾通用性和可扩展性，便于与 EdgeX 生态集成。
@@ -531,7 +531,7 @@ Go设备提供`SecretProvider.GetSecret()`API来检索设备服务密钥，详�
 
 
 
-# [APIReference](https://docs.edgexfoundry.org/3.1/microservices/device/ApiReference/)
+# [APIReference](https://docs.edgexfoundry.org/4.0/microservices/device/ApiReference/)
 
 这是一个REST API，由Device Serive SDK提供，并被所有的设备继承。
 
@@ -554,7 +554,7 @@ Go设备提供`SecretProvider.GetSecret()`API来检索设备服务密钥，详�
 > **警告** 
 > 在设备服务启动后编辑本地设备配置文件不会影响实际使用的设备配置文件。必须先从核心元数据中删除旧版本，然后重启设备服务以将新版本推送至核心元数据。
 >
-> 设备配置文件还可以通过核心元数据的《设备配置文件 REST API —— [REST API](https://docs.edgexfoundry.org/3.1/microservices/core/metadata/ApiReference/)》手动添加、更新或删除。
+> 设备配置文件还可以通过核心元数据的《设备配置文件 REST API —— [REST API](https://docs.edgexfoundry.org/4.0/microservices/core/metadata/ApiReference/)》手动添加、更新或删除。
 
 
 
@@ -665,7 +665,7 @@ attributes:
 
 ### REST 命令端点
 
-服务会为设备配置文件中指定的每个设备资源和设备命令隐式创建命令端点。详情见《[Device Service API Reference](https://docs.edgexfoundry.org/3.1/microservices/device/ApiReference/) 》中的GET and SET Device Command APIs。
+服务会为设备配置文件中指定的每个设备资源和设备命令隐式创建命令端点。详情见《[Device Service API Reference](https://docs.edgexfoundry.org/4.0/microservices/device/ApiReference/) 》中的GET and SET Device Command APIs。
 
 ---
 
@@ -731,7 +731,7 @@ resourceOperations:
 
 ![image-20250321152819616](https://raw.githubusercontent.com/clint456/PicGo/main/edgex/image-20250321152819616.png)
 
-在 EdgeX 的术语中，“设备”指的是传感器、执行器或 IoT "事物"。传感器通常用于收集来自物理世界的信息——例如温度传感器或振动传感器。执行器是可以接收指令并执行操作的设备。执行器移动或控制机制或系统——例如，控制泵的阀门。虽然从技术上讲，传感器和执行器可能有所不同，但在 EdgeX 文档中，设备一词将泛指传感器、执行器或“事物”。
+在 EdgeX 的术语中，"设备"指的是传感器、执行器或 IoT "事物"。传感器通常用于收集来自物理世界的信息——例如温度传感器或振动传感器。执行器是可以接收指令并执行操作的设备。执行器移动或控制机制或系统——例如，控制泵的阀门。虽然从技术上讲，传感器和执行器可能有所不同，但在 EdgeX 文档中，设备一词将泛指传感器、执行器或"事物"。
 
 关于实际设备的数据是另一种类型的信息，每个设备必须具有一个唯一的名称与之关联。核心元数据微服务([core metadata micro service](https://docs.edgexfoundry.org/4.1/microservices/core/metadata/Purpose/))存储有关设备的信息。这些信息被其他服务（例如设备、命令等）用来与设备进行通信。每个设备还会与一个设备配置文件相关联。此关联使得元数据能够利用设备配置文件中提供的知识来描述每个设备。例如，恒温器配置文件会指定它报告的温度值是摄氏度。将特定的恒温器（例如大厅的恒温器）与恒温器配置文件关联，使得元数据能够知道大厅恒温器报告的温度值是以摄氏度为单位的。
 
@@ -742,7 +742,7 @@ resourceOperations:
 
 ### 设备配置
 
-一些设备服务具有发现新设备的能力，详细信息请参见“[Provision a device](https://docs.edgexfoundry.org/4.1/walk-through/Ch-WalkthroughProvision/)”和“[Device Discovery](https://docs.edgexfoundry.org/4.1/microservices/device/details/DeviceDiscovery/)”。
+一些设备服务具有发现新设备的能力，详细信息请参见"[Provision a device](https://docs.edgexfoundry.org/4.1/walk-through/Ch-WalkthroughProvision/) "和"[Device Discovery](https://docs.edgexfoundry.org/4.1/microservices/device/details/DeviceDiscovery/) "。
 
 ##  Auto Events
 
@@ -884,11 +884,11 @@ curl http://localhost:59880/api/v3/event/device/name/device-demo
 
 在动态配置（也称为设备发现）中，设备服务会收到一些关于查找位置和设备一般参数的信息。例如，设备服务可能会收到一个网络地址范围，并被告知在该范围内查找特定类型的设备。然而，设备服务并不知道设备是否实际存在——启动时设备可能并不在场。它必须在其操作期间（通常按照某种时间表）持续扫描，根据配置提供的地点和设备参数指南发现新设备。
 
-并非所有设备服务都支持动态发现。如果支持动态发现，关于查找对象和位置（即扫描位置）的配置由**预配置观察者（Provision Watcher）**指定。预配置观察者通过调用核心元数据的预配置观察者 API [（core metadata provision watcher API）](https://docs.edgexfoundry.org/3.1/microservices/core/metadata/ApiReference/)创建（并存储在元数据数据库中）。
+并非所有设备服务都支持动态发现。如果支持动态发现，关于查找对象和位置（即扫描位置）的配置由**预配置观察者（Provision Watcher）**指定。预配置观察者通过调用核心元数据的预配置观察者 API [（core metadata provision watcher API）](https://docs.edgexfoundry.org/4.0/microservices/core/metadata/ApiReference/)创建（并存储在元数据数据库中）。
 
 **Provision Watcher：**
 
-预配置观察者是一个过滤器，应用于设备服务扫描设备时发现的任何新设备。它包含一组协议属性名称和值，这些值可以是正则表达式。如果要添加新设备，这些属性必须与新设备的相应属性匹配。此外，预配置观察者还可能包含“阻止”标识符，如果新设备的属性与这些标识符中的任何一个匹配（注意，此处的匹配不是基于正则表达式），则不会自动配置该设备。这允许缩小设备扫描的范围或避免特定设备。
+预配置观察者是一个过滤器，应用于设备服务扫描设备时发现的任何新设备。它包含一组协议属性名称和值，这些值可以是正则表达式。如果要添加新设备，这些属性必须与新设备的相应属性匹配。此外，预配置观察者还可能包含"阻止"标识符，如果新设备的属性与这些标识符中的任何一个匹配（注意，此处的匹配不是基于正则表达式），则不会自动配置该设备。这允许缩小设备扫描的范围或避免特定设备。
 
 可以为设备服务提供多个预配置观察者，发现的设备如果与其中任何一个匹配就会被添加。除了过滤标准外，预配置观察者还包括与匹配新设备关联的各种属性规格：配置文件名称、初始管理状态（AdminState），以及可选的自动事件（AutoEvents）。
 
@@ -919,7 +919,7 @@ curl http://localhost:59880/api/v3/event/device/name/device-demo
 
 设备服务 - 命令行选项
 
-请参阅《[Common Command Line Options](https://docs.edgexfoundry.org/3.1/microservices/configuration/CommonCommandLineOptions/)》以了解所有 EdgeX 服务共用的命令行选项集。以下是设备服务特定的命令行选项。
+请参阅《[Common Command Line Options](https://docs.edgexfoundry.org/4.0/microservices/configuration/CommonCommandLineOptions/)》以了解所有 EdgeX 服务共用的命令行选项集。以下是设备服务特定的命令行选项。
 
 **运行多个实例**
 
@@ -939,11 +939,11 @@ curl http://localhost:59880/api/v3/event/device/name/device-demo
 
  环境变量
 
-请参阅[《通用环境变量》](https://docs.edgexfoundry.org/3.1/microservices/configuration/CommonEnvironmentVariables/)部分，以了解所有 EdgeX 服务共用的环境变量列表。本节剩余内容是设备服务特定的环境变量。
+请参阅[《通用环境变量》](https://docs.edgexfoundry.org/4.0/microservices/configuration/CommonEnvironmentVariables/)部分，以了解所有 EdgeX 服务共用的环境变量列表。本节剩余内容是设备服务特定的环境变量。
 
 ### EDGEX_INSTANCE_NAME
 
-此环境变量会覆盖 -i/--instance [command-line option](https://docs.edgexfoundry.org/3.1/microservices/device/details/CommandLine/#running-multiple-instances) 以及设备服务设置的默认值。
+此环境变量会覆盖 -i/--instance [command-line option](https://docs.edgexfoundry.org/4.0/microservices/device/details/CommandLine/#running-multiple-instances) 以及设备服务设置的默认值。
 
 ------
 
@@ -959,7 +959,7 @@ curl http://localhost:59880/api/v3/event/device/name/device-demo
 
 设备服务 - 密钥种子
 
-设备服务通常需要特定的秘密用于身份验证、加密等。这些秘密可以在启动时通过秘密种子文件植入服务的 `SecretStore` 中。有关更多详情，请参阅《[Seeding Service Secrets](https://docs.edgexfoundry.org/3.1/security/SeedingServiceSecrets/)安全页面。
+设备服务通常需要特定的秘密用于身份验证、加密等。这些秘密可以在启动时通过秘密种子文件植入服务的 `SecretStore` 中。有关更多详情，请参阅《[Seeding Service Secrets](https://docs.edgexfoundry.org/4.0/security/SeedingServiceSecrets/)安全页面。
 
 ---
 
@@ -987,13 +987,13 @@ curl http://localhost:59880/api/v3/event/device/name/device-demo
 
 总结
 
-设备服务的服务指标功能内置了三项指标：`EventsSent`（事件发送）、`ReadingsSent`（读数发送）和 `LastConnected`（最后连接时间），均为布尔类型，可通过配置启用或禁用报告。这些指标监控服务的运行状态，自定义指标则可通过《[Custom Service Metrics](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/CustomServiceMetrics/)》指南扩展功能。
+设备服务的服务指标功能内置了三项指标：`EventsSent`（事件发送）、`ReadingsSent`（读数发送）和 `LastConnected`（最后连接时间），均为布尔类型，可通过配置启用或禁用报告。这些指标监控服务的运行状态，自定义指标则可通过《[Custom Service Metrics](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/CustomServiceMetrics/)》指南扩展功能。
 
 
 
 # Device Service SDK
 
-## [Purpose](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/Purpose/)
+## [Purpose](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/Purpose/)
 
 ![image-20250320143527806](https://raw.githubusercontent.com/clint456/PicGo/main/edgex/image-20250320143527806.png)
 
@@ -1036,7 +1036,7 @@ SDK 实际上是用于集成到新微服务中的库，大大简化了编写新�
    - **例子**：智能家居系统中，灯光、空调和安防摄像头各自有不同配置文件，但通过统一平台管理。
 
 7. **支持由命令触发的一组动作**  
-   - **应用场景**：适用于需要协同操作的物联网场景。例如，一个“回家”命令可以触发开门、开灯和调节室内温度等一系列动作，提升用户体验和自动化水平。
+   - **应用场景**：适用于需要协同操作的物联网场景。例如，一个"回家"命令可以触发开门、开灯和调节室内温度等一系列动作，提升用户体验和自动化水平。
    - **例子**：工业自动化中，一条生产线启动命令可触发多个设备按序运行。
 
 8. **对查询的缓存响应**  
@@ -1051,7 +1051,7 @@ SDK 实际上是用于集成到新微服务中的库，大大简化了编写新�
 
 ## Getting Started
 
-### [Go SDK](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/devicesdk-getting-started/GettingStartedSDK-Go/) - 入门指南
+### [Go SDK](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/devicesdk-getting-started/GettingStartedSDK-Go/) - 入门指南
 
 本指南将帮助您创建一个简单的设备服务，该服务生成随机数以模拟从实际设备获取数据。通过这种方式，您可以探索 SDK 框架并完成设备服务所需的工作，而无需实际连接设备。
 
@@ -1059,7 +1059,7 @@ SDK 实际上是用于集成到新微服务中的库，大大简化了编写新�
 
 #### 安装依赖
 
-请参阅《[Getting Started - Go Developers](https://docs.edgexfoundry.org/3.1/getting-started/Ch-GettingStartedGoDevelopers/) 》，安装开发 GoLang 服务所需的工具和基础设施。
+请参阅《[Getting Started - Go Developers](https://docs.edgexfoundry.org/4.0/getting-started/Ch-GettingStartedGoDevelopers/) 》，安装开发 GoLang 服务所需的工具和基础设施。
 
 ---
 
@@ -1386,8 +1386,8 @@ make build
 
    这将启动服务并立即在终端显示日志条目。
 
-   **EdgeX 3.0**  
-   在 EdgeX 3.0 中，服务必须提供一个标志，指示新通用配置的位置。通常使用 `-cp/--configProvider` 指定使用配置提供者进行配置。或者，可以使用 `-cc/--commonConfig` 标志指定包含通用配置的文件。此外，在混合模式下运行时，`-d/--dev` 标志告知服务它处于混合模式，并将依赖项的主机名覆盖为 `localhost`。详情见《命令行选项》。
+   **EdgeX 4.0**  
+   在 EdgeX 4.0 中，服务必须提供一个标志，指示新通用配置的位置。通常使用 `-cp/--configProvider` 指定使用配置提供者进行配置。或者，可以使用 `-cc/--commonConfig` 标志指定包含通用配置的文件。此外，在混合模式下运行时，`-d/--dev` 标志告知服务它处于混合模式，并将依赖项的主机名覆盖为 `localhost`。详情见《命令行选项》。
 
 3. 在浏览器中输入以下 URL，查看服务生成并发送到 EdgeX 的事件/读数数据：
 
@@ -1410,7 +1410,7 @@ make build
 
 新增功能如设备验证（`DeviceValidator` 接口）和自定义结构化配置（通过 SDK API）增强了服务的可扩展性。最终，服务通过 API（如 `http://localhost:59880/api/v3/event/device/name/RandNum-Device01`）输出模拟数据，展示了 SDK 的实用性与灵活性。
 
-### [C SDK](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/devicesdk-getting-started/GettingStartedSDK-C/)
+### [C SDK](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/devicesdk-getting-started/GettingStartedSDK-C/)
 
 coming soon
 
@@ -1420,7 +1420,7 @@ coming soon
 
 ### Go SDK API
 
-[官方Go SDK参考文档](https://docs.edgexfoundry.org/4.1/microservices/device/sdk/api/GoDeviceSDK/GoDeviceSDKAPI/)
+[官方Go SDK参考文档](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/api/GoDeviceSDK/GoDeviceSDKAPI/)
 
 **DeviceServiceSDK API** 为设备服务开发者提供了以下 API。
 
@@ -1576,7 +1576,7 @@ type DeviceServiceSDK interface {
 
 
 
-### Go SDK [ProtocolDriver](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/api/GoDeviceSDK/GoProtocolDriverAPI/)
+### Go SDK [ProtocolDriver](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/api/GoDeviceSDK/GoProtocolDriverAPI/)
 
 -协议驱动 API
 
@@ -1727,7 +1727,7 @@ HandleWriteCommands(deviceName string, protocols map[string]models.ProtocolPrope
 
 come soon
 
-## [Source Code](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/SourceCode/)
+## [Source Code](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/SourceCode/)
 
 
 
@@ -1735,16 +1735,16 @@ come soon
 
 
 
-### [Custom Configuration](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/CustomConfiguration/)
+### [Custom Configuration](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/CustomConfiguration/)
 
 
 
-### [Custom Rest Apis](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/CustomRestApis/)
+### [Custom Rest Apis](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/CustomRestApis/)
 
 
 
-### [Custom Service Metrics](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/CustomServiceMetrics/)
+### [Custom Service Metrics](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/CustomServiceMetrics/)
 
 
 
-##### [Secrets](https://docs.edgexfoundry.org/3.1/microservices/device/sdk/details/Secrets/)
+##### [Secrets](https://docs.edgexfoundry.org/4.0/microservices/device/sdk/details/Secrets/)
